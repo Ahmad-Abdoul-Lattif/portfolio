@@ -22,6 +22,59 @@
 </head>
 
 <body>
+    <!-- NAVIGATION FIXE EN HAUT -->
+    <nav class="top-navigation" id="topNav">
+        <!-- Logo/Nom -->
+        <div class="nav-brand">
+            <span class="nav-name">Ahmad A.L SAWADOGO</span>
+            <span class="nav-title">Cybersécurité</span>
+        </div>
+        
+        <!-- Menu principal -->
+        <div class="nav-menu" id="navMenu">
+            <button class="nav-btn active" onclick="showSection('about')" data-section="about">
+                <i class="fas fa-user-circle"></i>
+                <span>À Propos</span>
+            </button>
+            <button class="nav-btn" onclick="showSection('education')" data-section="education">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Formation</span>
+            </button>
+            <button class="nav-btn" onclick="showSection('experience')" data-section="experience">
+                <i class="fas fa-briefcase"></i>
+                <span>Expérience</span>
+            </button>
+            <button class="nav-btn" onclick="showSection('projects')" data-section="projects">
+                <i class="fas fa-shield-alt"></i>
+                <span>Projets</span>
+            </button>
+            <button class="nav-btn" onclick="showSection('skills')" data-section="skills">
+                <i class="fas fa-cogs"></i>
+                <span>Compétences</span>
+            </button>
+            <button class="nav-btn" onclick="showSection('certifications')" data-section="certifications">
+                <i class="fas fa-certificate"></i>
+                <span>Certifications</span>
+            </button>
+        </div>
+        
+        <!-- Boutons d'action -->
+        <div class="nav-actions">
+            <button onclick="downloadCV()" class="nav-download-btn" title="Télécharger CV">
+                <i class="fas fa-download"></i>
+                <span>CV</span>
+            </button>
+            <a href="mailto:sabdoullatif51@gmail.com" class="nav-contact-btn" title="Contact">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+        
+        <!-- Bouton menu mobile -->
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
     <!-- Conteneur principal de la page -->
     <div class="container">
         
@@ -64,44 +117,6 @@
                 </div>
             </div>
         </header>
-
-        <!-- ===========================================
-             NAVIGATION - MENU PRINCIPAL
-             =========================================== -->
-        <nav class="navigation" id="mainNav">
-            <!-- Bouton menu mobile -->
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <!-- Liste des menus -->
-            <div class="nav-menu">
-                <button class="nav-btn active" onclick="showSection('about')" data-section="about">
-                    <i class="fas fa-user-circle"></i>
-                    <span>À Propos</span>
-                </button>
-                <button class="nav-btn" onclick="showSection('education')" data-section="education">
-                    <i class="fas fa-graduation-cap"></i>
-                    <span>Formation</span>
-                </button>
-                <button class="nav-btn" onclick="showSection('experience')" data-section="experience">
-                    <i class="fas fa-briefcase"></i>
-                    <span>Expérience</span>
-                </button>
-                <button class="nav-btn" onclick="showSection('projects')" data-section="projects">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>Projets</span>
-                </button>
-                <button class="nav-btn" onclick="showSection('skills')" data-section="skills">
-                    <i class="fas fa-cogs"></i>
-                    <span>Compétences</span>
-                </button>
-                <button class="nav-btn" onclick="showSection('certifications')" data-section="certifications">
-                    <i class="fas fa-certificate"></i>
-                    <span>Certifications</span>
-                </button>
-            </div>
-        </nav>
 
         <!-- ===========================================
              SECTION À PROPOS
@@ -526,8 +541,13 @@
                                 </div>
                                 <div class="cert-date">2024</div>
                             </div>
-                            <div class="cert-badge">
-                                <i class="fas fa-check-circle"></i>
+                            <div class="cert-actions">
+                                <a href="https://coursera.org/verify/your_certificate_id_1" target="_blank" class="cert-link" title="Voir le certificat">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <div class="cert-badge">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
                             </div>
                         </div>
                         
@@ -542,8 +562,13 @@
                                 </div>
                                 <div class="cert-date">2024</div>
                             </div>
-                            <div class="cert-badge">
-                                <i class="fas fa-check-circle"></i>
+                            <div class="cert-actions">
+                                <a href="https://coursera.org/verify/your_certificate_id_2" target="_blank" class="cert-link" title="Voir le certificat">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <div class="cert-badge">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
                             </div>
                         </div>
                         
@@ -558,8 +583,13 @@
                                 </div>
                                 <div class="cert-date">2024</div>
                             </div>
-                            <div class="cert-badge">
-                                <i class="fas fa-check-circle"></i>
+                            <div class="cert-actions">
+                                <a href="https://coursera.org/verify/your_certificate_id_3" target="_blank" class="cert-link" title="Voir le certificat">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <div class="cert-badge">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
                             </div>
                         </div>
                         
@@ -574,8 +604,13 @@
                                 </div>
                                 <div class="cert-date">2024</div>
                             </div>
-                            <div class="cert-badge">
-                                <i class="fas fa-check-circle"></i>
+                            <div class="cert-actions">
+                                <a href="https://coursera.org/verify/your_certificate_id_4" target="_blank" class="cert-link" title="Voir le certificat">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <div class="cert-badge">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -643,23 +678,43 @@
                     <div class="tech-certs-grid">
                         <div class="tech-cert-item">
                             <i class="fas fa-shield-alt"></i>
-                            <span>CCNA 200-301 - Fondamentaux Sécurité Réseau</span>
-                            <small>Alphorme</small>
+                            <div class="tech-cert-content">
+                                <span>CCNA 200-301 - Fondamentaux Sécurité Réseau</span>
+                                <small>Alphorme</small>
+                            </div>
+                            <a href="certificates/alphorme_ccna_security.pdf" target="_blank" class="tech-cert-link" title="Télécharger le certificat">
+                                <i class="fas fa-download"></i>
+                            </a>
                         </div>
                         <div class="tech-cert-item">
                             <i class="fas fa-network-wired"></i>
-                            <span>CCNA 200-301 - Fondamentaux des Réseaux</span>
-                            <small>Alphorme</small>
+                            <div class="tech-cert-content">
+                                <span>CCNA 200-301 - Fondamentaux des Réseaux</span>
+                                <small>Alphorme</small>
+                            </div>
+                            <a href="certificates/alphorme_ccna_networks.pdf" target="_blank" class="tech-cert-link" title="Télécharger le certificat">
+                                <i class="fas fa-download"></i>
+                            </a>
                         </div>
                         <div class="tech-cert-item">
                             <i class="fas fa-bug"></i>
-                            <span>Méthodologies de Pentest</span>
-                            <small>Alphorme</small>
+                            <div class="tech-cert-content">
+                                <span>Méthodologies de Pentest</span>
+                                <small>Alphorme</small>
+                            </div>
+                            <a href="certificates/alphorme_pentest.pdf" target="_blank" class="tech-cert-link" title="Télécharger le certificat">
+                                <i class="fas fa-download"></i>
+                            </a>
                         </div>
                         <div class="tech-cert-item">
                             <i class="fas fa-search"></i>
-                            <span>Reconnaissance Passive et Active</span>
-                            <small>Alphorme</small>
+                            <div class="tech-cert-content">
+                                <span>Reconnaissance Passive et Active</span>
+                                <small>Alphorme</small>
+                            </div>
+                            <a href="certificates/alphorme_reconnaissance.pdf" target="_blank" class="tech-cert-link" title="Télécharger le certificat">
+                                <i class="fas fa-download"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
