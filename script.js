@@ -121,6 +121,8 @@ function updateNavigation(activeSection) {
     });
 }
 
+
+
 function initializeMobileMenu() {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     if (mobileMenuBtn) {
@@ -129,6 +131,7 @@ function initializeMobileMenu() {
         mobileMenuBtn.addEventListener('click', toggleMobileMenu);
     }
 }
+
 
 function toggleMobileMenu() {
     const navMenu = document.getElementById('navMenu');
