@@ -1,861 +1,676 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- Configuration de base du document -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio de Ahmad Abdoul Latif SAWADOGO - Étudiant Master 1 Cybersécurité">
-    <meta name="keywords" content="cybersécurité, réseaux, informatique, portfolio, développeur">
-    <meta name="author" content="Ahmad Abdoul Latif SAWADOGO">
-    
-    <title>Ahmad Abdoul Latif SAWADOGO - Portfolio Cybersécurité</title>
-    
-    <!-- Ressources externes -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Lien vers le fichier CSS -->
-    <link rel="stylesheet" href="styles.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ahmad Abdoul Latif SAWADOGO — Administrateur Systèmes & Sécurité des Systèmes d'Information" />
+  <meta name="author" content="Ahmad Abdoul Latif SAWADOGO" />
+  <title>Ahmad A.L. SAWADOGO — Admin Sys & Sécurité SI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-    <!-- NAVIGATION FIXE EN HAUT -->
-    <nav class="top-navigation" id="topNav">
-        <!-- Logo/Nom -->
-        <div class="nav-brand">
-            <span class="nav-name">Ahmad A.L SAWADOGO</span>
-            <span class="nav-title">Cybersécurité</span>
+
+  <!-- ══ NAVIGATION ══ -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <div class="logo-badge">ALS</div>
+        <div class="logo-info">
+          <span class="logo-name">Ahmad A.L. Sawadogo</span>
+          <span class="logo-sub">Admin Sys · Sécurité SI</span>
         </div>
-        
-        <!-- Menu principal -->
-        <div class="nav-menu" id="navMenu">
-            <button class="nav-btn active" onclick="showSection('about')" data-section="about">
-                <i class="fas fa-user-circle"></i>
-                <span>À Propos</span>
-            </button>
-            <button class="nav-btn" onclick="showSection('education')" data-section="education">
-                <i class="fas fa-graduation-cap"></i>
-                <span>Formation</span>
-            </button>
-            <button class="nav-btn" onclick="showSection('experience')" data-section="experience">
-                <i class="fas fa-briefcase"></i>
-                <span>Expérience</span>
-            </button>
-            <button class="nav-btn" onclick="showSection('projects')" data-section="projects">
-                <i class="fas fa-shield-alt"></i>
-                <span>Projets</span>
-            </button>
-            <button class="nav-btn" onclick="showSection('skills')" data-section="skills">
-                <i class="fas fa-cogs"></i>
-                <span>Compétences</span>
-            </button>
-            <button class="nav-btn" onclick="showSection('certifications')" data-section="certifications">
-                <i class="fas fa-certificate"></i>
-                <span>Certifications</span>
-            </button>
-        </div>
-        
-        <!-- Boutons d'action -->
-        <div class="nav-actions">
-            <button onclick="downloadCV()" class="nav-download-btn" title="Télécharger CV">
-                <i class="fas fa-download"></i>
-                <span>CV</span>
-            </button>
-            <a href="mailto:sabdoullatif51@gmail.com" class="nav-contact-btn" title="Contact">
-                <i class="fas fa-envelope"></i>
-            </a>
-        </div>
-        
-        <!-- Bouton menu mobile -->
-        <!-- <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-            <i class="fas fa-bars"></i>
-        </button> -->
-        <button class="mobile-menu-btn">
-            <i class="fas fa-bars"></i>
-        </button>
-    </nav>
-
-    <!-- Conteneur principal de la page -->
-    <div class="container">
-        
-        <!-- ===========================================
-             HEADER - EN-TÊTE DU PORTFOLIO
-             =========================================== -->
-        <header class="header" id="home">
-            <!-- Effet de fond animé -->
-            <div class="header-bg-effect"></div>
-            
-            <!-- Photo de profil -->
-            <div class="profile-img" id="profileImage">
-                <!-- Placeholder pour la photo - remplacez par votre image -->
-                <img src="images/profil.jpg" alt="Photo de Ahmad Abdoul Latif SAWADOGO" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-user\'></i>';">
-                <!-- Icône de fallback si pas d'image -->
-                <i class="fas fa-user" style="display: none;"></i>
-            </div>
-            
-            <!-- Informations personnelles -->
-            <h1 id="mainTitle">Ahmad Abdoul Latif SAWADOGO</h1>
-            <p class="subtitle">Étudiant Master 1 Cybersécurité & Ingénieur Réseaux</p>
-            
-            <!-- Informations de contact -->
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>+226 63-47-24-69</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:sabdoullatif51@gmail.com">sabdoullatif51@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Ouagadougou, Burkina Faso</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <a href="https://www.linkedin.com/in/sawadogo-ahmad-abdoul-latif-b19a71291?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B0WgFH0P6QWCWG7%2FWmwZqUQ%3D%3D" target="_blank">LinkedIn</a>
-                </div>
-            </div>
-        </header>
-
-        <!-- ===========================================
-             SECTION À PROPOS
-             =========================================== -->
-        <main>
-            <section id="about" class="section active">
-                <h2><i class="fas fa-user-circle"></i> À Propos</h2>
-                
-                <!-- Description professionnelle -->
-                <div class="about-content">
-                    <p class="intro-text">
-                        Diplômé d'une licence en Génie Électrique et Informatique Industrielle option Réseaux Informatiques et Télécommunications, 
-                        actuellement en Master 1 Sécurité Informatique à l'Institut Burkinabé des Arts et Métiers.
-                    </p>
-                    
-                    <p>
-                        Passionné par la cybersécurité, les réseaux et les nouvelles technologies, je possède une solide base technique 
-                        acquise à travers mes formations et mes expériences pratiques. Mon objectif est d'approfondir mes connaissances 
-                        en sécurité informatique et de contribuer à la protection des infrastructures numériques.
-                    </p>
-                    
-                    <!-- Points forts -->
-                    <div class="highlights">
-                        <h3><i class="fas fa-star"></i> Points Forts</h3>
-                        <div class="highlights-grid">
-                            <div class="highlight-item">
-                                <i class="fas fa-shield-virus"></i>
-                                <h4>Cybersécurité</h4>
-                                <p>Expertise en sécurité des réseaux et gestion des risques</p>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-network-wired"></i>
-                                <h4>Réseaux</h4>
-                                <p>Maîtrise des protocoles et architecture réseau</p>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-code"></i>
-                                <h4>Développement</h4>
-                                <p>Programmation Python, Java, développement web</p>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-users"></i>
-                                <h4>Leadership</h4>
-                                <p>Esprit d'équipe et capacité de leadership</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ===========================================
-                 SECTION FORMATION
-                 =========================================== -->
-            <section id="education" class="section">
-                <h2><i class="fas fa-graduation-cap"></i> Formation Académique</h2>
-                <div class="timeline">
-                    <!-- Master en cours -->
-                    <div class="timeline-item current">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3>Master 1 Informatique - Spécialisation Sécurité Informatique</h3>
-                            <div class="date"><i class="fas fa-calendar"></i> 2024 - 2025 (En cours)</div>
-                            <div class="location"><i class="fas fa-map-marker-alt"></i> Institut Burkinabé des Arts et Métiers, Ouagadougou</div>
-                            <p>Formation spécialisée en cybersécurité, gestion des risques informatiques et protection des systèmes d'information.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Licence -->
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3>Licence GEII - Réseaux Informatiques et Télécommunications</h3>
-                            <div class="date"><i class="fas fa-calendar"></i> 2023 - 2024</div>
-                            <div class="location"><i class="fas fa-map-marker-alt"></i> Université Privée Catholique Saint Joseph, Kaya</div>
-                            <p>Spécialisation en réseaux informatiques, télécommunications et systèmes embarqués.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- DUT -->
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3>DUT Génie Électrique et Informatique Industrielle</h3>
-                            <div class="date"><i class="fas fa-calendar"></i> 2022 - 2023</div>
-                            <div class="location"><i class="fas fa-map-marker-alt"></i> Université Privée Catholique, Kaya</div>
-                            <p>Formation technique en génie électrique et informatique industrielle.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Baccalauréat -->
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3>Baccalauréat série Mathématiques et Sciences de la Nature</h3>
-                            <div class="date"><i class="fas fa-calendar"></i> 2020 - 2021</div>
-                            <div class="location"><i class="fas fa-map-marker-alt"></i> Boussouma, Burkina Faso</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ===========================================
-                 SECTION EXPÉRIENCE
-                 =========================================== -->
-            <section id="experience" class="section">
-                <h2><i class="fas fa-briefcase"></i> Expérience Professionnelle</h2>
-                <div class="timeline">
-                    <!-- Stage récent -->
-                    <div class="timeline-item featured">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3>Stagiaire en Réseaux Informatiques et Télécommunications</h3>
-                            <div class="date"><i class="fas fa-calendar"></i> 18 Mars - 17 Juin 2024 (3 mois)</div>
-                            <div class="location"><i class="fas fa-building"></i> Ministère des Transports, Ouagadougou</div>
-                            
-                            <div class="mission-details">
-                                <h4><i class="fas fa-tasks"></i> Missions Principales :</h4>
-                                <ul>
-                                    <li><i class="fas fa-check-circle"></i> Assistance technique aux agents de la Direction des Systèmes d'Information (DSI)</li>
-                                    <li><i class="fas fa-check-circle"></i> Maintenance préventive et corrective du réseau informatique ministériel</li>
-                                    <li><i class="fas fa-check-circle"></i> Support aux projets de raccordement des sites au RESINA (Réseau National)</li>
-                                    <li><i class="fas fa-check-circle"></i> Mise en place d'outils de supervision et monitoring réseau</li>
-                                    <li><i class="fas fa-check-circle"></i> Étude et optimisation de l'architecture réseau du ministère</li>
-                                    <li><i class="fas fa-check-circle"></i> Documentation technique et rédaction de rapports</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="technologies-used">
-                                <h4><i class="fas fa-tools"></i> Technologies Utilisées :</h4>
-                                <div class="tech-tags">
-                                    <span class="tech-tag">Supervision Réseau</span>
-                                    <span class="tech-tag">RESINA</span>
-                                    <span class="tech-tag">Maintenance IT</span>
-                                    <span class="tech-tag">Documentation</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Stage précédent -->
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3>Stagiaire en Maintenance Électrique</h3>
-                            <div class="date"><i class="fas fa-calendar"></i> 04 Avril - 03 Juillet 2023 (3 mois)</div>
-                            <div class="location"><i class="fas fa-building"></i> CIMAF BURKINA, Ouagadougou</div>
-                            <p>Maintenance des équipements électriques et industriels, apprentissage des normes de sécurité électrique.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ===========================================
-                 SECTION PROJETS
-                 =========================================== -->
-            <section id="projects" class="section">
-                <h2><i class="fas fa-shield-alt"></i> Projets Cybersécurité & IT</h2>
-                
-                <div class="projects-grid">
-                    <!-- Projet 1 - Audit Sécurité -->
-                    <div class="project-card featured">
-                        <div class="project-icon">
-                            <i class="fas fa-search"></i>
-                        </div>
-                        <h3>Audit de Sécurité Réseau Ministériel</h3>
-                        <p class="project-description">
-                            Réalisation d'un audit complet de la sécurité du réseau du Ministère des Transports, 
-                            incluant l'identification des vulnérabilités et la proposition de solutions de renforcement.
-                        </p>
-                        <div class="project-details">
-                            <h4>Réalisations :</h4>
-                            <ul>
-                                <li>Cartographie complète du réseau</li>
-                                <li>Scan de vulnérabilités</li>
-                                <li>Analyse des configurations de sécurité</li>
-                                <li>Rapport de recommandations</li>
-                            </ul>
-                        </div>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Nmap</span>
-                            <span class="tech-tag">Wireshark</span>
-                            <span class="tech-tag">OpenVAS</span>
-                            <span class="tech-tag">Documentation</span>
-                        </div>
-                        <div class="project-status completed">
-                            <i class="fas fa-check-circle"></i> Terminé
-                        </div>
-                    </div>
-                    
-                    <!-- Projet 2 - Supervision -->
-                    <div class="project-card">
-                        <div class="project-icon">
-                            <i class="fas fa-eye"></i>
-                        </div>
-                        <h3>Système de Supervision Réseau</h3>
-                        <p class="project-description">
-                            Mise en place d'une solution de monitoring pour surveiller en temps réel 
-                            les équipements réseau et détecter les anomalies.
-                        </p>
-                        <div class="project-details">
-                            <h4>Fonctionnalités :</h4>
-                            <ul>
-                                <li>Monitoring temps réel</li>
-                                <li>Alertes automatiques</li>
-                                <li>Tableaux de bord</li>
-                                <li>Historique des événements</li>
-                            </ul>
-                        </div>
-                        <div class="tech-stack">
-                            <span class="tech-tag">SNMP</span>
-                            <span class="tech-tag">Nagios</span>
-                            <span class="tech-tag">Grafana</span>
-                            <span class="tech-tag">Python</span>
-                        </div>
-                        <div class="project-status completed">
-                            <i class="fas fa-check-circle"></i> Terminé
-                        </div>
-                    </div>
-                    
-                    <!-- Projet 3 - Machine Learning -->
-                    <div class="project-card">
-                        <div class="project-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <h3>Détection d'Anomalies par IA</h3>
-                        <p class="project-description">
-                            Développement d'un modèle de machine learning pour détecter 
-                            automatiquement les comportements anormaux dans le trafic réseau.
-                        </p>
-                        <div class="project-details">
-                            <h4>Approche :</h4>
-                            <ul>
-                                <li>Collecte de données réseau</li>
-                                <li>Preprocessing et feature engineering</li>
-                                <li>Entraînement de modèles ML</li>
-                                <li>Évaluation et déploiement</li>
-                            </ul>
-                        </div>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Scikit-learn</span>
-                            <span class="tech-tag">Pandas</span>
-                            <span class="tech-tag">TensorFlow</span>
-                        </div>
-                        <div class="project-status in-progress">
-                            <i class="fas fa-clock"></i> En cours
-                        </div>
-                    </div>
-                    
-                    <!-- Projet 4 - Site E-commerce -->
-                    <div class="project-card">
-                        <div class="project-icon">
-                            <i class="fas fa-shopping-cart"></i>
-                        </div>
-                        <h3>Plateforme E-commerce Sécurisée</h3>
-                        <p class="project-description">
-                            Développement d'un site e-commerce avec WordPress en mettant l'accent 
-                            sur la sécurité des transactions et la protection des données clients.
-                        </p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">WordPress</span>
-                            <span class="tech-tag">WooCommerce</span>
-                            <span class="tech-tag">SSL/TLS</span>
-                            <span class="tech-tag">PHP</span>
-                        </div>
-                        <div class="project-status completed">
-                            <i class="fas fa-check-circle"></i> Terminé
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ===========================================
-                 SECTION COMPÉTENCES
-                 =========================================== -->
-            <section id="skills" class="section">
-                <h2><i class="fas fa-cogs"></i> Compétences Techniques</h2>
-                <div class="skills-grid">
-                    <!-- Cybersécurité -->
-                    <div class="skill-category cyber">
-                        <div class="skill-header">
-                            <i class="fas fa-shield-virus"></i>
-                            <h3>Cybersécurité</h3>
-                        </div>
-                        <div class="skill-content">
-                            <div class="skill-tags">
-                                <span class="skill-tag">Audit de Sécurité</span>
-                                <span class="skill-tag">Gestion des Risques</span>
-                                <span class="skill-tag">Sécurité Réseau</span>
-                                <span class="skill-tag">Tests d'Intrusion</span>
-                                <span class="skill-tag">Forensics</span>
-                                <span class="skill-tag">SIEM</span>
-                            </div>
-                            <div class="skill-progress">
-                                <div class="progress-item">
-                                    <span>Sécurité Réseau</span>
-                                    <div class="progress-bar">
-                                        <div class="progress-fill" data-level="85"></div>
-                                    </div>
-                                </div>
-                                <div class="progress-item">
-                                    <span>Gestion des Risques</span>
-                                    <div class="progress-bar">
-                                        <div class="progress-fill" data-level="80"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Réseaux -->
-                    <div class="skill-category network">
-                        <div class="skill-header">
-                            <i class="fas fa-network-wired"></i>
-                            <h3>Réseaux & Protocoles</h3>
-                        </div>
-                        <div class="skill-content">
-                            <div class="skill-tags">
-                                <span class="skill-tag">TCP/IP</span>
-                                <span class="skill-tag">HTTP/HTTPS</span>
-                                <span class="skill-tag">UDP</span>
-                                <span class="skill-tag">SNMP</span>
-                                <span class="skill-tag">VPN</span>
-                                <span class="skill-tag">VLAN</span>
-                            </div>
-                            <div class="skill-tools">
-                                <h4>Outils :</h4>
-                                <div class="tool-tags">
-                                    <span class="tool-tag">Cisco Packet Tracer</span>
-                                    <span class="tool-tag">GNS3</span>
-                                    <span class="tool-tag">NS3</span>
-                                    <span class="tool-tag">Wireshark</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Développement -->
-                    <div class="skill-category dev">
-                        <div class="skill-header">
-                            <i class="fas fa-code"></i>
-                            <h3>Développement</h3>
-                        </div>
-                        <div class="skill-content">
-                            <div class="skill-tags">
-                                <span class="skill-tag">Python</span>
-                                <span class="skill-tag">Java</span>
-                                <span class="skill-tag">JavaScript</span>
-                                <span class="skill-tag">SQL</span>
-                                <span class="skill-tag">C</span>
-                                <span class="skill-tag">Angular</span>
-                            </div>
-                            <div class="skill-frameworks">
-                                <h4>Frameworks & Outils :</h4>
-                                <div class="framework-tags">
-                                    <span class="framework-tag">Git/GitHub</span>
-                                    <span class="framework-tag">Bootstrap</span>
-                                    <span class="framework-tag">WordPress</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Big Data & IA -->
-                    <div class="skill-category data">
-                        <div class="skill-header">
-                            <i class="fas fa-database"></i>
-                            <h3>Big Data & IA</h3>
-                        </div>
-                        <div class="skill-content">
-                            <div class="skill-tags">
-                                <span class="skill-tag">Hadoop</span>
-                                <span class="skill-tag">Spark</span>
-                                <span class="skill-tag">MapReduce</span>
-                                <span class="skill-tag">Machine Learning</span>
-                                <span class="skill-tag">Data Analysis</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Langues -->
-                <div class="languages-section">
-                    <h3><i class="fas fa-language"></i> Langues</h3>
-                    <div class="languages-grid">
-                        <div class="language-item">
-                            <div class="language-flag">🇫🇷</div>
-                            <div class="language-info">
-                                <h4>Français</h4>
-                                <span class="language-level native">Langue maternelle</span>
-                            </div>
-                        </div>
-                        <div class="language-item">
-                            <div class="language-flag">🇺🇸</div>
-                            <div class="language-info">
-                                <h4>Anglais</h4>
-                                <span class="language-level intermediate">Niveau B2</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ===========================================
-                 SECTION CERTIFICATIONS
-                 =========================================== -->
-            <section id="certifications" class="section">
-                <h2><i class="fas fa-certificate"></i> Certifications & Formations</h2>
-                
-                <!-- Certifications principales -->
-                <div class="certifications-section">
-                    <h3><i class="fas fa-award"></i> Certifications Cybersécurité</h3>
-                    <div class="certifications-grid">
-                        <div class="certification-item verified">
-                            <div class="cert-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <div class="cert-content">
-                                <h4>Foundations of Cybersecurity</h4>
-                                <div class="cert-provider">
-                                    <i class="fas fa-graduation-cap"></i> Coursera - Google
-                                </div>
-                                <div class="cert-date">2024</div>
-                            </div>
-                            <div class="cert-actions">
-                                <a href="https://coursera.org/verify/50SWWFX7TOMV" target="_blank" class="cert-link" title="Voir le certificat">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <div class="cert-badge">
-                                    <i class="fas fa-check-circle"></i>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="certification-item verified">
-                            <div class="cert-icon">
-                                <i class="fas fa-exclamation-triangle"></i>
-                            </div>
-                            <div class="cert-content">
-                                <h4>Play It Safe: Manage Security Risks</h4>
-                                <div class="cert-provider">
-                                    <i class="fas fa-graduation-cap"></i> Coursera - Google
-                                </div>
-                                <div class="cert-date">2024</div>
-                            </div>
-                            <div class="cert-actions">
-                                <a href="https://coursera.org/verify/OYPJV5UZPPVO" target="_blank" class="cert-link" title="Voir le certificat">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <div class="cert-badge">
-                                    <i class="fas fa-check-circle"></i>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="certification-item verified">
-                            <div class="cert-icon">
-                                <i class="fas fa-network-wired"></i>
-                            </div>
-                            <div class="cert-content">
-                                <h4>Connect and Protect: Networks and Network Security</h4>
-                                <div class="cert-provider">
-                                    <i class="fas fa-graduation-cap"></i> Coursera - Google
-                                </div>
-                                <div class="cert-date">2024</div>
-                            </div>
-                            <div class="cert-actions">
-                                <a href="https://coursera.org/verify/E5IJ4A7BRCGN" target="_blank" class="cert-link" title="Voir le certificat">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <div class="cert-badge">
-                                    <i class="fas fa-check-circle"></i>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="certification-item">
-                            <div class="cert-icon">
-                                <i class="fas fa-project-diagram"></i>
-                            </div>
-                            <div class="cert-content">
-                                <h4>Foundations of Project Management</h4>
-                                <div class="cert-provider">
-                                    <i class="fas fa-graduation-cap"></i> Coursera
-                                </div>
-                                <div class="cert-date">2024</div>
-                            </div>
-                            <div class="cert-actions">
-                                <a href="https://coursera.org/verify/MGALIAADGL65" target="_blank" class="cert-link" title="Voir le certificat">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <div class="cert-badge">
-                                    <i class="fas fa-check-circle"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Formations complémentaires -->
-                <div class="training-section">
-                    <h3><i class="fas fa-chalkboard-teacher"></i> Formations Complémentaires</h3>
-                    <div class="timeline compact">
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <h4>Développement Web Full Stack</h4>
-                                <div class="date"><i class="fas fa-calendar"></i> 07 Janvier - 06 Juin 2025</div>
-                                <div class="location"><i class="fas fa-building"></i> Institut WISE</div>
-                                <p>Formation complète en développement web moderne (Front-end & Back-end)</p>
-                            </div>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <h4>Segmentation de Base de Données avec Excel</h4>
-                                <div class="date"><i class="fas fa-calendar"></i> 21-25 Octobre 2024</div>
-                                <div class="location"><i class="fas fa-building"></i> Orange Digital Center</div>
-                                <p>Techniques avancées d'analyse et segmentation de données clients</p>
-                            </div>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <h4>Développement Site E-Commerce WordPress</h4>
-                                <div class="date"><i class="fas fa-calendar"></i> 14-18 Octobre 2024</div>
-                                <div class="location"><i class="fas fa-building"></i> Orange Digital Center</div>
-                                <p>Création et sécurisation de plateformes e-commerce</p>
-                            </div>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <h4>Machine Learning</h4>
-                                <div class="date"><i class="fas fa-calendar"></i> 09-13 Septembre 2024</div>
-                                <div class="location"><i class="fas fa-building"></i> Orange Digital Center</div>
-                                <p>Initiation aux algorithmes d'apprentissage automatique et intelligence artificielle</p>
-                            </div>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <h4>Formation Intensive en Anglais</h4>
-                                <div class="date"><i class="fas fa-calendar"></i> 09 Août - 08 Septembre 2024</div>
-                                <div class="location"><i class="fas fa-building"></i> English Institute</div>
-                                <p>Perfectionnement linguistique pour atteindre le niveau B2</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Certifications techniques (Alphorme) -->
-                <div class="technical-certs">
-                    <h3><i class="fas fa-tools"></i> Certifications Techniques</h3>
-                    <div class="tech-certs-grid">
-                        <div class="tech-cert-item">
-                            <i class="fas fa-shield-alt"></i>
-                            <div class="tech-cert-content">
-                                <span>CCNA 200-301 - Fondamentaux Sécurité Réseau</span>
-                                <small>Alphorme</small>
-                            </div>
-                            <a href="docs/ccna-200-301---fondamentaux-de-la-securite-reseau.pdf" target="_blank" class="tech-cert-link" title="Télécharger le certificat">
-                                <i class="fas fa-download"></i>
-                            </a>
-                        </div>
-                        <div class="tech-cert-item">
-                            <i class="fas fa-network-wired"></i>
-                            <div class="tech-cert-content">
-                                <span>CCNA 200-301 - Fondamentaux des Réseaux</span>
-                                <small>Alphorme</small>
-                            </div>
-                            <a href="docs/cisco-ccna-200-301---les-fondamentaux-des-reseaux.pdf" target="_blank" class="tech-cert-link" title="Télécharger le certificat">
-                                <i class="fas fa-download"></i>
-                            </a>
-                        </div>
-                        <div class="tech-cert-item">
-                            <i class="fas fa-bug"></i>
-                            <div class="tech-cert-content">
-                                <span>Méthodologies de Pentest</span>
-                                <small>Alphorme</small>
-                            </div>
-                            <a href="docs/methodologies-de-pentest---reconnaissance-passive-et-active.pdf" target="_blank" class="tech-cert-link" title="Télécharger le certificat">
-                                <i class="fas fa-download"></i>
-                            </a>
-                        </div>
-                        <div class="tech-cert-item">
-                            <i class="fas fa-search"></i>
-                            <div class="tech-cert-content">
-                                <span>Reconnaissance Passive et Active</span>
-                                <small>Alphorme</small>
-                            </div>
-                            <a href="docs/ccna-200-301---gestion-et-surveillance-du-reseau-cisco.pdf" target="_blank" class="tech-cert-link" title="Télécharger le certificat">
-                                <i class="fas fa-download"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <!-- ===========================================
-             SECTION CONTACT / CTA
-             =========================================== -->
-        <section class="cta-section">
-            <div class="cta-content">
-                <div class="cta-text">
-                    <h2><i class="fas fa-handshake"></i> Prêt pour un Stage en Cybersécurité</h2>
-                    <p class="cta-description">
-                        Je recherche activement un stage en cybersécurité pour mettre en pratique mes connaissances 
-                        et contribuer à vos projets de sécurisation des systèmes d'information.
-                    </p>
-                    <div class="cta-highlights">
-                        <div class="cta-highlight">
-                            <i class="fas fa-clock"></i>
-                            <span>Disponible immédiatement</span>
-                        </div>
-                        <div class="cta-highlight">
-                            <i class="fas fa-calendar-alt"></i>
-                            <span>Stage de 3-6 mois</span>
-                        </div>
-                        <div class="cta-highlight">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Ouagadougou & environs</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="cta-actions">
-                    <a href="mailto:sabdoullatif51@gmail.com?subject=Proposition de Stage - Cybersécurité" class="cta-button primary">
-                        <i class="fas fa-envelope"></i>
-                        Me Contacter
-                    </a>
-                    <a href="tel:+22663472469" class="cta-button secondary">
-                        <i class="fas fa-phone"></i>
-                        Appeler
-                    </a>
-                    <button onclick="downloadCV()" class="cta-button tertiary">
-                        <i class="fas fa-download"></i>
-                        Télécharger CV
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===========================================
-             PIED DE PAGE
-             =========================================== -->
-        <footer class="footer">
-            <div class="footer-content">
-                <!-- Informations personnelles -->
-                <div class="footer-section">
-                    <h4><i class="fas fa-user"></i> Ahmad Abdoul Latif SAWADOGO</h4>
-                    <p>Étudiant Master 1 Cybersécurité</p>
-                    <p>Ingénieur Réseaux & Télécommunications</p>
-                </div>
-                
-                <!-- Contact rapide -->
-                <div class="footer-section">
-                    <h4><i class="fas fa-phone"></i> Contact Rapide</h4>
-                    <div class="footer-contact">
-                        <a href="mailto:sabdoullatif51@gmail.com">
-                            <i class="fas fa-envelope"></i> sabdoullatif51@gmail.com
-                        </a>
-                        <a href="tel:+22663472469">
-                            <i class="fas fa-phone"></i> +226 63-47-24-69
-                        </a>
-                        <span>
-                            <i class="fas fa-map-marker-alt"></i> Ouagadougou, Burkina Faso
-                        </span>
-                    </div>
-                </div>
-                
-                <!-- Navigation rapide -->
-                <div class="footer-section">
-                    <h4><i class="fas fa-sitemap"></i> Navigation</h4>
-                    <div class="footer-nav">
-                        <a href="#" onclick="showSection('about')">À Propos</a>
-                        <a href="#" onclick="showSection('education')">Formation</a>
-                        <a href="#" onclick="showSection('experience')">Expérience</a>
-                        <a href="#" onclick="showSection('projects')">Projets</a>
-                        <a href="#" onclick="showSection('skills')">Compétences</a>
-                        <a href="#" onclick="showSection('certifications')">Certifications</a>
-                    </div>
-                </div>
-                
-                <!-- Réseaux sociaux -->
-                <div class="footer-section">
-                    <h4><i class="fas fa-share-alt"></i> Suivez-moi</h4>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/sawadogo-ahmad-abdoul-latif-b19a71291?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B0WgFH0P6QWCWG7%2FWmwZqUQ%3D%3D" target="_blank" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/Ahmad-Abdoul-Lattif" target="_blank" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://x.com/SawadogoAhmadA2" target="_blank" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="mailto:sabdoullatif51@gmail.com" aria-label="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Copyright et mentions -->
-            <div class="footer-bottom">
-                <div class="footer-bottom-content">
-                    <p>&copy; 2024 Ahmad Abdoul Latif SAWADOGO. Tous droits réservés.</p>
-                    <div class="footer-meta">
-                        <span>Portfolio créé avec passion 💙</span>
-                        <span>Dernière mise à jour : Décembre 2024</span>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-        <!-- Bouton de retour en haut -->
-        <button id="backToTop" class="back-to-top" onclick="scrollToTop()" aria-label="Retour en haut">
-            <i class="fas fa-chevron-up"></i>
-        </button>
-
-        <!-- Indicateur de chargement -->
-        <div id="loadingIndicator" class="loading-indicator">
-            <div class="spinner"></div>
-            <p>Chargement...</p>
-        </div>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <button class="nl active" data-s="about">À propos</button>
+        <button class="nl" data-s="education">Formation</button>
+        <button class="nl" data-s="experience">Expérience</button>
+        <button class="nl" data-s="projects">Projets</button>
+        <button class="nl" data-s="skills">Compétences</button>
+        <button class="nl" data-s="certifications">Certifications</button>
+      </div>
+      <div class="nav-cta">
+        <button class="btn-cv" onclick="downloadCV()"><i class="fas fa-download"></i><span>CV</span></button>
+        <a class="btn-mail" href="mailto:sabdoullatif51@gmail.com"><i class="fas fa-envelope"></i></a>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
     </div>
+  </nav>
 
-    <!-- Scripts JavaScript -->
-    <script src="script.js"></script>
-    
-    <!-- Script pour Google Analytics (optionnel) -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script> -->
+  <main>
+
+    <!-- ══ HERO ══ -->
+    <section class="hero" id="hero">
+      <div class="hero-noise"></div>
+      <div class="hero-glow g1"></div>
+      <div class="hero-glow g2"></div>
+
+      <div class="hero-body">
+        <div class="hero-left">
+          <div class="hero-status"><span class="status-dot"></span>Disponible — Poste Junior</div>
+          <h1 class="hero-name">Ahmad<br>Abdoul Latif<br><strong>SAWADOGO</strong></h1>
+          <p class="hero-role">Administrateur Systèmes &amp;<br>Sécurité des Systèmes d'Information</p>
+          <p class="hero-meta"><i class="fas fa-graduation-cap"></i> Master Sécurité Informatique · IBAM · 2024–2026</p>
+
+          <div class="hero-links">
+            <a href="tel:+22663472469" class="hl"><i class="fas fa-phone"></i> +226 63-47-24-69</a>
+            <a href="mailto:sabdoullatif51@gmail.com" class="hl"><i class="fas fa-envelope"></i> sabdoullatif51@gmail.com</a>
+            <span class="hl"><i class="fas fa-map-marker-alt"></i> Ouagadougou, Burkina Faso</span>
+            <a href="https://www.linkedin.com/in/sawadogo-ahmad-abdoul-latif-b19a71291" target="_blank" class="hl"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/Ahmad-Abdoul-Lattif" target="_blank" class="hl"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://ahmad-abdoul-lattif.github.io/portfolio/" target="_blank" class="hl"><i class="fas fa-globe"></i> Portfolio</a>
+          </div>
+
+          <div class="hero-actions">
+            <button onclick="downloadCV()" class="btn-primary"><i class="fas fa-download"></i> Télécharger le CV</button>
+            <button onclick="go('about')" class="btn-outline">Voir le profil <i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="profile-ring">
+            <div class="profile-img">
+              <img src="images/profil.jpg" alt="Ahmad Abdoul Latif SAWADOGO"
+                onerror="this.style.display='none';document.querySelector('.profile-fallback').style.display='flex'"/>
+              <div class="profile-fallback"><i class="fas fa-user-shield"></i></div>
+            </div>
+          </div>
+          <div class="hero-cards">
+            <div class="hcard"><i class="fas fa-shield-alt"></i><div><strong>Sécurité SI</strong><small>Audit · Pentest · SIEM</small></div></div>
+            <div class="hcard"><i class="fas fa-server"></i><div><strong>Admin Systèmes</strong><small>Linux · Windows Server</small></div></div>
+            <div class="hcard"><i class="fas fa-network-wired"></i><div><strong>Réseaux</strong><small>Cisco · VLAN · VPN</small></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scroll-hint"><span>Défiler</span><i class="fas fa-chevron-down"></i></div>
+    </section>
+
+    <!-- ══ SECTIONS ══ -->
+    <div class="sections-wrap">
+
+      <!-- ── À PROPOS ── -->
+      <section id="about" class="sec active">
+        <div class="sec-header">
+          <span class="sec-tag">01</span>
+          <h2>À Propos</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-bio">
+            <p class="about-lead">Ingénieur en réseaux informatiques et administrateur systèmes, actuellement en Master de Sécurité Informatique à l'IBAM de Ouagadougou.</p>
+            <p>Passionné par la protection des infrastructures numériques, je combine une solide base technique en administration systèmes et réseaux avec une expertise en cybersécurité offensive et défensive. Mon objectif : intégrer une équipe technique exigeante pour contribuer à la sécurisation des systèmes d'information.</p>
+            <p>Rigoureux, curieux et orienté solutions, j'ai développé mes compétences à travers des formations certifiantes reconnues (Google, CISCO, Red Team Leaders) et des expériences terrain au sein d'institutions publiques.</p>
+
+            <div class="about-perso">
+              <div class="perso-item"><i class="fas fa-birthday-cake"></i><span>19 septembre 2002, Kaya</span></div>
+              <div class="perso-item"><i class="fas fa-map-marker-alt"></i><span>Ouagadougou, Somgandé</span></div>
+              <div class="perso-item"><i class="fas fa-heart"></i><span>Lecture · Sport · Nouvelles technologies</span></div>
+              <div class="perso-item"><i class="fas fa-language"></i><span>Français · Anglais · Mooré</span></div>
+            </div>
+          </div>
+
+          <div class="about-highlights">
+            <div class="ah-card">
+              <div class="ah-icon"><i class="fas fa-shield-virus"></i></div>
+              <h4>Cybersécurité</h4>
+              <p>Audit, pentest, hacking éthique, gestion des risques et protection des SI</p>
+            </div>
+            <div class="ah-card">
+              <div class="ah-icon"><i class="fas fa-server"></i></div>
+              <h4>Administration Systèmes</h4>
+              <p>Linux, Windows Server, virtualisation, DNS, conteneurs Docker</p>
+            </div>
+            <div class="ah-card">
+              <div class="ah-icon"><i class="fas fa-network-wired"></i></div>
+              <h4>Réseaux & Télécoms</h4>
+              <p>Architecture réseau, Cisco, VLAN, VPN, supervision et monitoring</p>
+            </div>
+            <div class="ah-card">
+              <div class="ah-icon"><i class="fas fa-code"></i></div>
+              <h4>Développement</h4>
+              <p>Python, Angular, Node.js, WordPress, scripting et automatisation</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── FORMATION ── -->
+      <section id="education" class="sec">
+        <div class="sec-header">
+          <span class="sec-tag">02</span>
+          <h2>Formation Académique</h2>
+        </div>
+        <div class="timeline">
+
+          <div class="tl-item current">
+            <div class="tl-mark"><span class="tl-year">2026</span></div>
+            <div class="tl-body">
+              <div class="tl-badge current-badge">En cours</div>
+              <h3>Master en Sécurité Informatique</h3>
+              <div class="tl-school"><i class="fas fa-university"></i> Institut Burkinabè des Arts et des Métiers (IBAM), Ouagadougou</div>
+              <div class="tl-dates"><i class="fas fa-calendar-alt"></i> 2024 – 2026</div>
+              <p>Formation spécialisée en sécurité des systèmes d'information, administration systèmes, cryptographie, analyse de vulnérabilités et gestion des risques informatiques.</p>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-mark"><span class="tl-year">2024</span></div>
+            <div class="tl-body">
+              <div class="tl-badge">Diplômé</div>
+              <h3>Diplôme d'Ingénieur des Travaux — Réseaux Informatiques & Télécoms</h3>
+              <div class="tl-school"><i class="fas fa-university"></i> Université Privée Catholique Saint Joseph (UCSJ), Kaya</div>
+              <div class="tl-dates"><i class="fas fa-calendar-alt"></i> 2023 – 2024</div>
+              <p>Spécialisation en réseaux informatiques, architecture télécoms, administration systèmes et sécurité réseau.</p>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-mark"><span class="tl-year">2023</span></div>
+            <div class="tl-body">
+              <div class="tl-badge">Diplômé</div>
+              <h3>Diplôme de Technicien Supérieur — Génie Électrique & Informatique Industrielle</h3>
+              <div class="tl-school"><i class="fas fa-university"></i> Université Privée Catholique Saint Joseph (UCSJ), Kaya</div>
+              <div class="tl-dates"><i class="fas fa-calendar-alt"></i> 2022 – 2023</div>
+              <p>Formation technique en génie électrique, automatisme industriel et informatique embarquée.</p>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-mark"><span class="tl-year">2021</span></div>
+            <div class="tl-body">
+              <div class="tl-badge">Obtenu</div>
+              <h3>Baccalauréat Série D — Mathématiques & Sciences de la Nature</h3>
+              <div class="tl-school"><i class="fas fa-school"></i> Lycée Municipal, Boussouma</div>
+              <div class="tl-dates"><i class="fas fa-calendar-alt"></i> 2020 – 2021</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── EXPÉRIENCE ── -->
+      <section id="experience" class="sec">
+        <div class="sec-header">
+          <span class="sec-tag">03</span>
+          <h2>Expérience Professionnelle</h2>
+        </div>
+        <div class="timeline">
+
+          <div class="tl-item featured">
+            <div class="tl-mark"><span class="tl-year">2025</span></div>
+            <div class="tl-body">
+              <div class="tl-badge featured-badge">Stage · 3 mois</div>
+              <h3>Stagiaire Développement Web</h3>
+              <div class="tl-school"><i class="fas fa-building"></i> Sahelys, Ouagadougou</div>
+              <div class="tl-dates"><i class="fas fa-calendar-alt"></i> 2025 (3 mois)</div>
+              <div class="tl-missions">
+                <h4><i class="fas fa-tasks"></i> Missions</h4>
+                <ul>
+                  <li><i class="fas fa-check"></i> Développement et maintenance d'applications web</li>
+                  <li><i class="fas fa-check"></i> Intégration front-end et développement back-end</li>
+                  <li><i class="fas fa-check"></i> Participation aux revues de code et tests qualité</li>
+                  <li><i class="fas fa-check"></i> Déploiement et configuration de serveurs web</li>
+                </ul>
+              </div>
+              <div class="tl-tags">
+                <span>HTML/CSS</span><span>JavaScript</span><span>Node.js</span><span>WordPress</span><span>Git</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tl-item featured">
+            <div class="tl-mark"><span class="tl-year">2024</span></div>
+            <div class="tl-body">
+              <div class="tl-badge featured-badge">Stage · 3 mois</div>
+              <h3>Stagiaire Réseaux Informatiques & Télécoms</h3>
+              <div class="tl-school"><i class="fas fa-building"></i> Direction Générale des Services Informatiques — Ministère de l'Économie (DGSI), Ouagadougou</div>
+              <div class="tl-dates"><i class="fas fa-calendar-alt"></i> Mars 2024 – Juin 2024</div>
+              <div class="tl-missions">
+                <h4><i class="fas fa-tasks"></i> Missions</h4>
+                <ul>
+                  <li><i class="fas fa-check"></i> Assistance technique aux agents de la DSI</li>
+                  <li><i class="fas fa-check"></i> Maintenance préventive et corrective du réseau ministériel</li>
+                  <li><i class="fas fa-check"></i> Support aux projets de raccordement des sites au RESINA</li>
+                  <li><i class="fas fa-check"></i> Mise en place d'outils de supervision et monitoring réseau</li>
+                  <li><i class="fas fa-check"></i> Étude et optimisation de l'architecture réseau</li>
+                  <li><i class="fas fa-check"></i> Documentation technique et rédaction de rapports</li>
+                </ul>
+              </div>
+              <div class="tl-tags">
+                <span>Supervision Réseau</span><span>SNMP</span><span>RESINA</span><span>Cisco</span><span>Documentation</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-mark"><span class="tl-year">2023</span></div>
+            <div class="tl-body">
+              <div class="tl-badge">Stage · 3 mois</div>
+              <h3>Stagiaire Génie Électrique & Informatique Industrielle</h3>
+              <div class="tl-school"><i class="fas fa-building"></i> CIMAF Burkina, Ouagadougou</div>
+              <div class="tl-dates"><i class="fas fa-calendar-alt"></i> Avril 2023 – Juillet 2023</div>
+              <p>Maintenance des équipements électriques et industriels, application des normes de sécurité électrique, diagnostic et réparation des pannes.</p>
+              <div class="tl-tags">
+                <span>Maintenance Électrique</span><span>Sécurité Industrielle</span><span>Automatisme</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── PROJETS ── -->
+      <section id="projects" class="sec">
+        <div class="sec-header">
+          <span class="sec-tag">04</span>
+          <h2>Projets Techniques</h2>
+        </div>
+        <div class="projects-grid">
+
+          <div class="proj-card featured-proj">
+            <div class="proj-top">
+              <div class="proj-icon"><i class="fas fa-eye"></i></div>
+              <div class="proj-status done">Réalisé</div>
+            </div>
+            <h3>Système de Supervision Réseau</h3>
+            <p>Déploiement d'une solution de monitoring réseau au sein de la DGSI pour surveiller en temps réel les équipements, détecter les anomalies et générer des alertes automatiques.</p>
+            <div class="proj-list">
+              <span><i class="fas fa-check-circle"></i> Monitoring temps réel des équipements</span>
+              <span><i class="fas fa-check-circle"></i> Alertes automatiques par seuils</span>
+              <span><i class="fas fa-check-circle"></i> Tableaux de bord de supervision</span>
+              <span><i class="fas fa-check-circle"></i> Historique et logs des événements</span>
+            </div>
+            <div class="proj-stack">
+              <span>SNMP</span><span>Nagios</span><span>Grafana</span><span>Python</span><span>Linux</span>
+            </div>
+          </div>
+
+          <div class="proj-card">
+            <div class="proj-top">
+              <div class="proj-icon"><i class="fas fa-search"></i></div>
+              <div class="proj-status wip">Académique</div>
+            </div>
+            <h3>Audit de Sécurité Réseau</h3>
+            <p>Réalisation d'un audit de sécurité réseau incluant cartographie, scan de vulnérabilités, analyse des configurations et rapport de recommandations.</p>
+            <div class="proj-list">
+              <span><i class="fas fa-check-circle"></i> Cartographie du réseau</span>
+              <span><i class="fas fa-check-circle"></i> Scan de vulnérabilités</span>
+              <span><i class="fas fa-check-circle"></i> Analyse des configurations</span>
+              <span><i class="fas fa-check-circle"></i> Rapport de recommandations</span>
+            </div>
+            <div class="proj-stack">
+              <span>Nmap</span><span>Wireshark</span><span>OpenVAS</span><span>Kali Linux</span>
+            </div>
+          </div>
+
+          <div class="proj-card">
+            <div class="proj-top">
+              <div class="proj-icon"><i class="fas fa-globe"></i></div>
+              <div class="proj-status done">Réalisé</div>
+            </div>
+            <h3>Portfolio Personnel</h3>
+            <p>Conception et développement d'un portfolio professionnel full-stack avec navigation dynamique, animations et design responsive.</p>
+            <div class="proj-list">
+              <span><i class="fas fa-check-circle"></i> Design responsive mobile-first</span>
+              <span><i class="fas fa-check-circle"></i> Navigation SPA sans rechargement</span>
+              <span><i class="fas fa-check-circle"></i> Animations CSS avancées</span>
+              <span><i class="fas fa-check-circle"></i> Déployé sur GitHub Pages</span>
+            </div>
+            <div class="proj-stack">
+              <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>GitHub Pages</span>
+            </div>
+            <a href="https://ahmad-abdoul-lattif.github.io/portfolio/" target="_blank" class="proj-link"><i class="fas fa-external-link-alt"></i> Voir en ligne</a>
+          </div>
+
+          <div class="proj-card">
+            <div class="proj-top">
+              <div class="proj-icon"><i class="fas fa-server"></i></div>
+              <div class="proj-status wip">En cours</div>
+            </div>
+            <h3>Lab Virtualisation & Sécurité</h3>
+            <p>Mise en place d'un environnement de laboratoire virtualisé pour tester des scénarios d'attaques/défenses, configurer des firewalls et pratiquer la réponse à incidents.</p>
+            <div class="proj-list">
+              <span><i class="fas fa-check-circle"></i> VMs Kali Linux, Windows Server</span>
+              <span><i class="fas fa-check-circle"></i> Simulation attaques/défenses</span>
+              <span><i class="fas fa-check-circle"></i> Configuration pfSense / firewall</span>
+              <span><i class="fas fa-check-circle"></i> Pratique réponse à incidents</span>
+            </div>
+            <div class="proj-stack">
+              <span>VirtualBox</span><span>Kali Linux</span><span>pfSense</span><span>Metasploit</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── COMPÉTENCES ── -->
+      <section id="skills" class="sec">
+        <div class="sec-header">
+          <span class="sec-tag">05</span>
+          <h2>Compétences Techniques</h2>
+        </div>
+
+        <div class="skills-grid">
+
+          <div class="sk-card">
+            <div class="sk-head"><i class="fas fa-shield-virus"></i><h3>Cybersécurité</h3></div>
+            <div class="sk-tags">
+              <span>Audit de Sécurité</span>
+              <span>Tests d'intrusion</span>
+              <span>Hacking Éthique</span>
+              <span>Gestion des Risques</span>
+              <span>Forensics</span>
+              <span>SIEM</span>
+              <span>Phishing</span>
+              <span>Sécurité Réseau</span>
+            </div>
+            <div class="sk-tools">
+              <h4>Outils</h4>
+              <div class="sk-tool-tags"><span>Kali Linux</span><span>Nmap</span><span>Wireshark</span><span>Metasploit</span><span>Burp Suite</span><span>OpenVAS</span></div>
+            </div>
+          </div>
+
+          <div class="sk-card">
+            <div class="sk-head"><i class="fas fa-server"></i><h3>Admin Systèmes</h3></div>
+            <div class="sk-tags">
+              <span>Linux (Ubuntu/Debian/CentOS)</span>
+              <span>Windows Server</span>
+              <span>Active Directory</span>
+              <span>DNS / DHCP</span>
+              <span>Docker</span>
+              <span>Virtualisation</span>
+              <span>Shell Scripting</span>
+            </div>
+            <div class="sk-tools">
+              <h4>Outils</h4>
+              <div class="sk-tool-tags"><span>VirtualBox</span><span>VMware</span><span>Docker</span><span>Ansible</span></div>
+            </div>
+          </div>
+
+          <div class="sk-card">
+            <div class="sk-head"><i class="fas fa-network-wired"></i><h3>Réseaux & Télécoms</h3></div>
+            <div class="sk-tags">
+              <span>TCP/IP</span><span>VLAN</span><span>VPN</span><span>SNMP</span><span>HTTP/HTTPS</span><span>BGP/OSPF</span><span>Firewall</span>
+            </div>
+            <div class="sk-tools">
+              <h4>Outils</h4>
+              <div class="sk-tool-tags"><span>Cisco Packet Tracer</span><span>GNS3</span><span>Wireshark</span><span>Nagios</span><span>Grafana</span></div>
+            </div>
+          </div>
+
+          <div class="sk-card">
+            <div class="sk-head"><i class="fas fa-code"></i><h3>Développement</h3></div>
+            <div class="sk-tags">
+              <span>Python</span><span>JavaScript</span><span>Node.js</span><span>Angular</span><span>SQL</span><span>HTML/CSS</span><span>PHP</span><span>Java</span>
+            </div>
+            <div class="sk-tools">
+              <h4>Outils</h4>
+              <div class="sk-tool-tags"><span>Git/GitHub</span><span>VS Code</span><span>WordPress</span><span>Bootstrap</span></div>
+            </div>
+          </div>
+
+          <div class="sk-card">
+            <div class="sk-head"><i class="fas fa-cloud"></i><h3>Cloud & Virtualisation</h3></div>
+            <div class="sk-tags">
+              <span>Cloud Computing</span><span>Docker</span><span>Conteneurisation</span><span>VirtualBox</span><span>VMware</span>
+            </div>
+            <div class="sk-tools">
+              <h4>Formations</h4>
+              <div class="sk-tool-tags"><span>Cloud Computing Basics</span><span>Docker (OpenClassrooms)</span></div>
+            </div>
+          </div>
+
+          <div class="sk-card">
+            <div class="sk-head"><i class="fas fa-database"></i><h3>Data & IA</h3></div>
+            <div class="sk-tags">
+              <span>Hadoop</span><span>Spark</span><span>Machine Learning</span><span>Data Analysis</span><span>Python/Pandas</span>
+            </div>
+            <div class="sk-tools">
+              <h4>Formations</h4>
+              <div class="sk-tool-tags"><span>ML – Orange Digital Center</span><span>Excel Avancé – ODC</span></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="languages-bar">
+          <h3><i class="fas fa-language"></i> Langues</h3>
+          <div class="lang-grid">
+            <div class="lang-item"><span class="lang-flag">🇫🇷</span><div><strong>Français</strong><small>Courant</small></div></div>
+            <div class="lang-item"><span class="lang-flag">🇺🇸</span><div><strong>Anglais</strong><small>Intermédiaire (B2)</small></div></div>
+            <div class="lang-item"><span class="lang-flag">🇧🇫</span><div><strong>Mooré</strong><small>Courant</small></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── CERTIFICATIONS ── -->
+      <section id="certifications" class="sec">
+        <div class="sec-header">
+          <span class="sec-tag">06</span>
+          <h2>Certifications & Formations</h2>
+        </div>
+
+        <!-- Certifications majeures -->
+        <div class="cert-block">
+          <h3 class="cert-group-title"><i class="fas fa-award"></i> Certifications Reconnues</h3>
+          <div class="cert-grid">
+
+            <div class="cert-card highlight">
+              <div class="cert-logo google"><i class="fab fa-google"></i></div>
+              <div class="cert-info">
+                <h4>Google Cybersecurity Certificate</h4>
+                <span class="cert-issuer">Google · Coursera</span>
+                <span class="cert-date"><i class="fas fa-calendar-check"></i> Septembre 2025</span>
+              </div>
+              <div class="cert-actions">
+                <span class="cert-verified"><i class="fas fa-check-circle"></i> Vérifié</span>
+              </div>
+            </div>
+
+            <div class="cert-card highlight">
+              <div class="cert-logo redteam"><i class="fas fa-user-secret"></i></div>
+              <div class="cert-info">
+                <h4>Certified Cybersecurity Educator Professional (CCEP)</h4>
+                <span class="cert-issuer">Red Team Leaders</span>
+                <span class="cert-date"><i class="fas fa-calendar-check"></i> Décembre 2025</span>
+              </div>
+              <div class="cert-actions">
+                <span class="cert-verified"><i class="fas fa-check-circle"></i> Vérifié</span>
+              </div>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-logo cisco"><i class="fas fa-network-wired"></i></div>
+              <div class="cert-info">
+                <h4>Introduction à la Cybersécurité</h4>
+                <span class="cert-issuer">CISCO Networking Academy</span>
+                <span class="cert-date"><i class="fas fa-calendar-check"></i> 2024</span>
+              </div>
+              <div class="cert-actions">
+                <span class="cert-verified"><i class="fas fa-check-circle"></i> Vérifié</span>
+              </div>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-logo blackhat"><i class="fas fa-skull-crossbones"></i></div>
+              <div class="cert-info">
+                <h4>Cybersécurité Offensive & Hacking Éthique</h4>
+                <span class="cert-issuer">Black Hat</span>
+                <span class="cert-date"><i class="fas fa-calendar-check"></i> 2024–2025</span>
+              </div>
+              <div class="cert-actions">
+                <span class="cert-verified"><i class="fas fa-check-circle"></i> Vérifié</span>
+              </div>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-logo phish"><i class="fas fa-fish"></i></div>
+              <div class="cert-info">
+                <h4>Certified Phishing Prevention Specialist</h4>
+                <span class="cert-issuer">Certification Spécialisée</span>
+                <span class="cert-date"><i class="fas fa-calendar-check"></i> 2024–2025</span>
+              </div>
+              <div class="cert-actions">
+                <span class="cert-verified"><i class="fas fa-check-circle"></i> Vérifié</span>
+              </div>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-logo alphorme"><i class="fas fa-bug"></i></div>
+              <div class="cert-info">
+                <h4>Méthodologies de Pentest — Reconnaissance Passive & Active</h4>
+                <span class="cert-issuer">Alphorme</span>
+                <span class="cert-date"><i class="fas fa-calendar-check"></i> 2024</span>
+              </div>
+              <div class="cert-actions">
+                <a href="docs/methodologies-de-pentest---reconnaissance-passive-et-active.pdf" target="_blank" class="cert-dl"><i class="fas fa-download"></i></a>
+                <span class="cert-verified"><i class="fas fa-check-circle"></i> Vérifié</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Formations complémentaires -->
+        <div class="cert-block">
+          <h3 class="cert-group-title"><i class="fas fa-chalkboard-teacher"></i> Formations Complémentaires</h3>
+          <div class="training-grid">
+
+            <div class="training-item">
+              <div class="tr-icon"><i class="fas fa-laptop-code"></i></div>
+              <div class="tr-info">
+                <h4>Développement Web Full Stack</h4>
+                <span class="tr-org">Institut WISE, Ouagadougou</span>
+                <span class="tr-date">Janv. – Juin 2025 · <strong>Terminée</strong></span>
+                <p>Formation complète en développement web moderne — HTML, CSS, JavaScript, Node.js, bases de données et déploiement.</p>
+              </div>
+            </div>
+
+            <div class="training-item">
+              <div class="tr-icon"><i class="fas fa-brain"></i></div>
+              <div class="tr-info">
+                <h4>Machine Learning</h4>
+                <span class="tr-org">Orange Digital Center, Ouagadougou</span>
+                <span class="tr-date">Septembre 2024</span>
+                <p>Initiation aux algorithmes d'apprentissage automatique et à l'intelligence artificielle appliquée.</p>
+              </div>
+            </div>
+
+            <div class="training-item">
+              <div class="tr-icon"><i class="fas fa-shopping-cart"></i></div>
+              <div class="tr-info">
+                <h4>Développement Site E-Commerce WordPress</h4>
+                <span class="tr-org">Orange Digital Center, Ouagadougou</span>
+                <span class="tr-date">Octobre 2024</span>
+                <p>Création et sécurisation de plateformes e-commerce avec WordPress et WooCommerce.</p>
+              </div>
+            </div>
+
+            <div class="training-item">
+              <div class="tr-icon"><i class="fas fa-table"></i></div>
+              <div class="tr-info">
+                <h4>Segmentation de Base de Données avec Excel</h4>
+                <span class="tr-org">Orange Digital Center, Ouagadougou</span>
+                <span class="tr-date">Octobre 2024</span>
+                <p>Techniques avancées d'analyse et segmentation de données clients pour la prise de décision.</p>
+              </div>
+            </div>
+
+            <div class="training-item">
+              <div class="tr-icon"><i class="fas fa-flag-usa"></i></div>
+              <div class="tr-info">
+                <h4>Formation Intensive en Anglais</h4>
+                <span class="tr-org">English Institute, Ouagadougou</span>
+                <span class="tr-date">Août – Septembre 2024</span>
+                <p>Perfectionnement linguistique — atteinte du niveau B2 en anglais professionnel et technique.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Certifications OpenClassrooms -->
+        <div class="cert-block">
+          <h3 class="cert-group-title"><i class="fas fa-graduation-cap"></i> Formation en Ligne (OpenClassrooms)</h3>
+          <div class="oc-grid">
+            <div class="oc-item"><i class="fas fa-network-wired"></i><span>Administrez une architecture réseau avec Cisco</span></div>
+            <div class="oc-item"><i class="fas fa-sitemap"></i><span>Concevez votre réseau TCP/IP</span></div>
+            <div class="oc-item"><i class="fas fa-project-diagram"></i><span>Simulez des architectures réseaux avec GNS3</span></div>
+            <div class="oc-item"><i class="fab fa-linux"></i><span>Administrez un système Linux</span></div>
+            <div class="oc-item"><i class="fab fa-windows"></i><span>Prenez en main Windows Server</span></div>
+            <div class="oc-item"><i class="fas fa-globe"></i><span>Installation et configuration des serveurs DNS</span></div>
+            <div class="oc-item"><i class="fab fa-python"></i><span>Apprenez les bases du langage Python</span></div>
+            <div class="oc-item"><i class="fab fa-angular"></i><span>Framework Angular</span></div>
+            <div class="oc-item"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+            <div class="oc-item"><i class="fas fa-docker"></i><span>Créer des conteneurs avec Docker</span></div>
+            <div class="oc-item"><i class="fas fa-cloud"></i><span>Cloud Computing Basics</span></div>
+            <div class="oc-item"><i class="fas fa-tasks"></i><span>Gérez votre projet informatique facilement</span></div>
+          </div>
+        </div>
+
+      </section>
+
+    </div><!-- /sections-wrap -->
+
+    <!-- ══ CTA ══ -->
+    <section class="cta-section">
+      <div class="cta-noise"></div>
+      <div class="cta-inner">
+        <div class="cta-text">
+          <h2>Prêt à rejoindre une équipe technique</h2>
+          <p>Je recherche un poste junior en administration systèmes, sécurité des systèmes d'information ou réseaux pour mettre mes compétences au service d'une organisation exigeante.</p>
+          <div class="cta-chips">
+            <span><i class="fas fa-check"></i> Disponible immédiatement</span>
+            <span><i class="fas fa-map-marker-alt"></i> Ouagadougou & environs</span>
+            <span><i class="fas fa-briefcase"></i> Poste junior CDI/CDD</span>
+          </div>
+        </div>
+        <div class="cta-btns">
+          <a href="mailto:sabdoullatif51@gmail.com?subject=Opportunité%20professionnelle%20—%20Admin%20Sys%20%26%20Sécurité%20SI" class="btn-primary"><i class="fas fa-envelope"></i> Me contacter</a>
+          <a href="tel:+22663472469" class="btn-outline"><i class="fas fa-phone"></i> +226 63-47-24-69</a>
+          <button onclick="downloadCV()" class="btn-ghost"><i class="fas fa-download"></i> Télécharger le CV</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo-badge sm">ALS</div>
+        <div>
+          <p class="footer-name">Ahmad Abdoul Latif SAWADOGO</p>
+          <p class="footer-sub">Administrateur Systèmes & Sécurité SI</p>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <button onclick="go('about')">À propos</button>
+        <button onclick="go('education')">Formation</button>
+        <button onclick="go('experience')">Expérience</button>
+        <button onclick="go('projects')">Projets</button>
+        <button onclick="go('skills')">Compétences</button>
+        <button onclick="go('certifications')">Certifications</button>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/sawadogo-ahmad-abdoul-latif-b19a71291" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Ahmad-Abdoul-Lattif" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:sabdoullatif51@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://x.com/SawadogoAhmadA2" target="_blank"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Ahmad Abdoul Latif SAWADOGO</span>
+      <span>Mis à jour · Juin 2025</span>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Haut de page"><i class="fas fa-chevron-up"></i></button>
+
+  <script src="script.js"></script>
 </body>
 </html>
