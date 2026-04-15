@@ -1,0 +1,12 @@
+# docker-compose.yml
+
+services:
+  portfolio:
+    build: .
+    container_name: portfolio-ahmad
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    volumes:
+      # En dev : montage live pour voir les modifs sans rebuild
+      - ./:/usr/share/nginx/html:ro
