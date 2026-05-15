@@ -1,200 +1,147 @@
-/* ═══════════════════════════════════════════════
-   AHMAD A.L. SAWADOGO — PORTFOLIO JS
-   ═══════════════════════════════════════════════ */
-
 'use strict';
 
-// ── SECTION NAVIGATION ──
-const sections = ['about','education','experience','projects','skills','certifications'];
+const SECTIONS = ['about','education','experience','projects','skills','certifications'];
 let current = 'about';
 
+/* ── NAVIGATION ── */
 function go(id) {
-  if (!document.getElementById(id)) return;
+  if (!SECTIONS.includes(id) || !document.getElementById(id)) return;
 
-  // Hide all
-  document.querySelectorAll('.sec').forEach(s => {
-    s.classList.remove('active');
-    s.style.display = 'none';
-  });
+  document.querySelectorAll('.sec').forEach(s => { s.classList.remove('active'); s.style.display='none'; });
+  const el = document.getElementById(id);
+  el.style.display = 'block';
+  requestAnimationFrame(() => el.classList.add('active'));
 
-  // Show target
-  const target = document.getElementById(id);
-  target.style.display = 'block';
-  requestAnimationFrame(() => target.classList.add('active'));
-
-  // Update nav
-  document.querySelectorAll('.nl').forEach(b => {
-    b.classList.toggle('active', b.dataset.s === id);
-  });
-
+  document.querySelectorAll('.nl').forEach(b => b.classList.toggle('active', b.dataset.s === id));
   current = id;
   window.scrollTo({ top: 0, behavior: 'smooth' });
   history.replaceState(null, '', '#' + id);
-
-  // Close mobile menu if open
-  closeMobileMenu();
+  closeMobile();
 }
 
-// ── INIT SECTIONS ──
 function initSections() {
-  sections.forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.style.display = 'none';
-  });
-
+  SECTIONS.forEach(id => { const el = document.getElementById(id); if(el) el.style.display='none'; });
   const hash = window.location.hash.slice(1);
-  go(sections.includes(hash) ? hash : 'about');
+  go(SECTIONS.includes(hash) ? hash : 'about');
 }
 
-// ── NAV BUTTONS ──
-document.querySelectorAll('.nl').forEach(btn => {
-  btn.addEventListener('click', () => go(btn.dataset.s));
+document.querySelectorAll('.nl').forEach(b => b.addEventListener('click', () => go(b.dataset.s)));
+document.querySelectorAll('.footer-nav button').forEach(b => {
+  b.addEventListener('click', () => {
+    const map = {'À propos':'about','Formation':'education','Expérience':'experience','Projets':'projects','Compétences':'skills','Certifications':'certifications'};
+    go(map[b.textContent.trim()] || 'about');
+  });
 });
 
-// ── MOBILE MENU ──
+/* ── MOBILE MENU ── */
 const hamburger = document.getElementById('hamburger');
 const navLinks  = document.getElementById('navLinks');
 
-function closeMobileMenu() {
-  hamburger.classList.remove('open');
-  navLinks.classList.remove('open');
+function closeMobile() {
+  hamburger?.classList.remove('open');
+  navLinks?.classList.remove('open');
 }
 
-hamburger.addEventListener('click', () => {
+hamburger?.addEventListener('click', () => {
   hamburger.classList.toggle('open');
   navLinks.classList.toggle('open');
 });
-
-// Close on outside click
 document.addEventListener('click', e => {
-  if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-    closeMobileMenu();
-  }
+  if (!hamburger?.contains(e.target) && !navLinks?.contains(e.target)) closeMobile();
 });
 
-// ── SCROLL EFFECTS ──
-const nav = document.getElementById('nav');
+/* ── SCROLL ── */
 const btt = document.getElementById('btt');
-
-let lastScroll = 0;
 window.addEventListener('scroll', () => {
-  const y = window.scrollY;
-
-  // Nav shadow on scroll
-  nav.style.boxShadow = y > 10 ? '0 1px 30px rgba(0,0,0,0.4)' : 'none';
-
-  // Back to top
-  btt.classList.toggle('show', y > 400);
-
-  lastScroll = y;
+  btt?.classList.toggle('show', window.scrollY > 400);
 }, { passive: true });
 
-// ── KEYBOARD NAV ──
+/* ── KEYBOARD ── */
 document.addEventListener('keydown', e => {
   if (e.altKey) {
-    const idx = sections.indexOf(current);
-    if (e.key === 'ArrowRight' && idx < sections.length - 1) go(sections[idx + 1]);
-    if (e.key === 'ArrowLeft'  && idx > 0)                   go(sections[idx - 1]);
+    const i = SECTIONS.indexOf(current);
+    if (e.key === 'ArrowRight' && i < SECTIONS.length-1) go(SECTIONS[i+1]);
+    if (e.key === 'ArrowLeft'  && i > 0)                  go(SECTIONS[i-1]);
   }
-  if (e.key === 'Escape') closeMobileMenu();
+  if (e.key === 'Escape') closeMobile();
 });
 
-// ── CV DOWNLOAD ──
+/* ── CV DOWNLOAD ── */
 function downloadCV() {
-  showToast('Téléchargement en cours…', 'info');
+  toast('Téléchargement en cours…', 'info');
   setTimeout(() => {
     const a = document.createElement('a');
     a.href = 'https://github.com/Ahmad-Abdoul-Lattif/Mon-CV/raw/master/CV_Ahmad_Sawadogo.pdf';
     a.download = 'CV_Ahmad_Abdoul_Latif_SAWADOGO.pdf';
     a.target = '_blank';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    showToast('CV téléchargé avec succès !', 'success');
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    toast('CV téléchargé !', 'success');
   }, 800);
 }
 
-// ── TOAST NOTIFICATION ──
-function showToast(msg, type = 'info') {
+/* ── TOAST ── */
+function toast(msg, type='info') {
   document.querySelectorAll('.toast').forEach(t => t.remove());
-
-  const colors = { success: '#34d399', info: '#4f8ef7', error: '#f87171' };
-  const icons  = { success: 'check-circle', info: 'info-circle', error: 'exclamation-circle' };
-
-  const toast = document.createElement('div');
-  toast.className = 'toast';
-  toast.innerHTML = `<i class="fas fa-${icons[type]}"></i> ${msg}`;
-  toast.style.cssText = `
-    position: fixed; bottom: 80px; right: 28px; z-index: 9999;
-    background: #1a1d25; border: 1px solid ${colors[type]}44;
-    border-left: 3px solid ${colors[type]};
-    color: #f0f2f5; padding: 12px 18px; border-radius: 10px;
-    font-family: 'DM Sans', sans-serif; font-size: 13.5px;
-    display: flex; align-items: center; gap: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    animation: toastIn 0.3s ease;
-    max-width: 320px;
-  `;
-  toast.querySelector('i').style.color = colors[type];
-
-  document.body.appendChild(toast);
-  setTimeout(() => {
-    toast.style.animation = 'toastOut 0.3s ease forwards';
-    setTimeout(() => toast.remove(), 300);
-  }, 3500);
+  const colors = { success:'#3fb950', info:'#58a6ff', error:'#f85149' };
+  const icons  = { success:'check-circle', info:'info-circle', error:'exclamation-circle' };
+  const el = document.createElement('div');
+  el.className = 'toast';
+  el.innerHTML = `<i class="fas fa-${icons[type]}" style="color:${colors[type]}"></i> ${msg}`;
+  Object.assign(el.style, {
+    position:'fixed', bottom:'72px', right:'24px', zIndex:'9999',
+    background:'#161b22', border:`1px solid ${colors[type]}33`,
+    borderLeft:`3px solid ${colors[type]}`,
+    color:'#e6edf3', padding:'11px 16px', borderRadius:'8px',
+    fontFamily:'Inter,sans-serif', fontSize:'13px',
+    display:'flex', alignItems:'center', gap:'9px',
+    boxShadow:'0 8px 24px rgba(0,0,0,0.5)',
+    animation:'toastIn 0.25s ease', maxWidth:'300px'
+  });
+  document.body.appendChild(el);
+  setTimeout(() => { el.style.animation='toastOut 0.25s ease forwards'; setTimeout(()=>el.remove(),250); }, 3500);
 }
 
-// ── INTERSECTION OBSERVER — fade in cards ──
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
-      observer.unobserve(entry.target);
-    }
+/* ── ANIMATE ON SCROLL ── */
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; obs.unobserve(e.target); }
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+}, { threshold:0.08, rootMargin:'0px 0px -30px 0px' });
 
-function observeCards() {
-  document.querySelectorAll('.ah-card, .proj-card, .sk-card, .cert-card, .tl-body, .training-item, .oc-item').forEach((el, i) => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(24px)';
-    el.style.transition = `opacity 0.5s ease ${i * 0.04}s, transform 0.5s ease ${i * 0.04}s`;
-    observer.observe(el);
+function observeEls() {
+  document.querySelectorAll('.ac-card,.proj-card,.sk-card,.cert-card,.tl-card,.ti-item,.oc-item,.lang-item').forEach((el,i) => {
+    el.style.opacity='0'; el.style.transform='translateY(18px)';
+    el.style.transition=`opacity 0.4s ease ${i*0.035}s, transform 0.4s ease ${i*0.035}s`;
+    obs.observe(el);
   });
 }
 
-// ── DYNAMIC STYLES ──
-const dynStyle = document.createElement('style');
-dynStyle.textContent = `
-  @keyframes toastIn  { from { opacity:0; transform: translateX(20px); } to { opacity:1; transform: translateX(0); } }
-  @keyframes toastOut { from { opacity:1; transform: translateX(0); }    to { opacity:0; transform: translateX(20px); } }
-`;
-document.head.appendChild(dynStyle);
+/* ── TERMINAL TYPING ── */
+function typeTerminal() {
+  const cursor = document.querySelector('.t-cursor');
+  if (cursor) setInterval(() => { cursor.style.opacity = cursor.style.opacity==='0'?'1':'0'; }, 600);
+}
 
-// ── POPSTATE ──
+/* ── POPSTATE ── */
 window.addEventListener('popstate', () => {
   const hash = window.location.hash.slice(1);
-  if (sections.includes(hash)) go(hash);
+  if (SECTIONS.includes(hash)) go(hash);
 });
 
-// ── FOOTER NAV ──
-document.querySelectorAll('.footer-nav button').forEach(btn => {
-  btn.addEventListener('click', () => go(btn.textContent.trim().toLowerCase()
-    .replace('à propos','about')
-    .replace('formation','education')
-    .replace('expérience','experience')
-    .replace('projets','projects')
-    .replace('compétences','skills')
-    .replace('certifications','certifications')
-  ));
-});
+/* ── DYNAMIC STYLES ── */
+const s = document.createElement('style');
+s.textContent = `
+  @keyframes toastIn  { from{opacity:0;transform:translateX(16px)} to{opacity:1;transform:translateX(0)} }
+  @keyframes toastOut { from{opacity:1;transform:translateX(0)} to{opacity:0;transform:translateX(16px)} }
+`;
+document.head.appendChild(s);
 
-// ── BOOT ──
+/* ── BOOT ── */
 document.addEventListener('DOMContentLoaded', () => {
   initSections();
-  setTimeout(observeCards, 200);
-  console.log('%cPortfolio Ahmad A.L. SAWADOGO', 'color:#4f8ef7;font-family:monospace;font-size:14px;font-weight:bold;');
+  setTimeout(observeEls, 150);
+  typeTerminal();
+  console.log('%c Ahmad A.L. SAWADOGO — Portfolio ', 'background:#58a6ff;color:#fff;font-family:monospace;font-size:13px;padding:4px 8px;border-radius:4px;');
 });
 
 window.downloadCV = downloadCV;
