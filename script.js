@@ -63,7 +63,7 @@ document.addEventListener('keydown', e => {
     if (e.key === 'ArrowRight' && i < SECTIONS.length-1) go(SECTIONS[i+1]);
     if (e.key === 'ArrowLeft'  && i > 0)                  go(SECTIONS[i-1]);
   }
-  if (e.key === 'Escape') closeMobile();
+  if (e.key === 'Escape') { closeMobile(); closeCertModal(); }
 });
 
 /* ── CV DOWNLOAD ── */
@@ -144,5 +144,33 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('%c Ahmad A.L. SAWADOGO — Portfolio ', 'background:#58a6ff;color:#fff;font-family:monospace;font-size:13px;padding:4px 8px;border-radius:4px;');
 });
 
-window.downloadCV = downloadCV;
-window.go = go;
+/* ── CERT VIEWER ── */
+function viewCert(src, title) {
+  const isPdf = src.toLowerCase().endsWith('.pdf');
+  const body  = document.getElementById('certModalBody');
+
+  body.innerHTML = isPdf
+    ? `<iframe id="certModalFrame" src="${src}" title="${title}"></iframe>`
+    : `<img src="${src}" alt="${title}" style="width:100%;height:100%;object-fit:contain;display:block;background:var(--bg1)">`;
+
+  document.getElementById('certModalTitle').textContent = title;
+  const dl = document.getElementById('certModalDl');
+  dl.href = src;
+  dl.download = src.split('/').pop();
+
+  document.getElementById('certModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCertModal() {
+  const overlay = document.getElementById('certModal');
+  if (!overlay.classList.contains('open')) return;
+  overlay.classList.remove('open');
+  document.getElementById('certModalBody').innerHTML = '';
+  document.body.style.overflow = '';
+}
+
+window.downloadCV  = downloadCV;
+window.go          = go;
+window.viewCert    = viewCert;
+window.closeCertModal = closeCertModal;

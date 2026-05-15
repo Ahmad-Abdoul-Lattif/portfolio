@@ -526,8 +526,77 @@
             <span class="cert-when"><i class="fas fa-calendar-check"></i> 2024</span>
           </div>
           <div class="cert-actions">
-            <a href="docs/methodologies-de-pentest---reconnaissance-passive-et-active.pdf" target="_blank" class="cert-dl"><i class="fas fa-download"></i></a>
+            <button class="cert-view" onclick="viewCert('docs/methodologies-de-pentest---reconnaissance-passive-et-active.pdf','Méthodologies de Pentest — Alphorme')" title="Visualiser"><i class="fas fa-eye"></i></button>
+            <a href="docs/methodologies-de-pentest---reconnaissance-passive-et-active.pdf" target="_blank" class="cert-dl" title="Télécharger"><i class="fas fa-download"></i></a>
             <span class="cert-badge verified"><i class="fas fa-check-circle"></i> Vérifié</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Attestations Alphorme -->
+    <div class="cert-block">
+      <h3 class="cert-block-title"><i class="fas fa-certificate"></i> Attestations de Formation — Alphorme</h3>
+      <div class="alphorme-grid">
+
+        <div class="alph-card">
+          <div class="alph-icon-wrap"><i class="fas fa-network-wired"></i></div>
+          <div class="alph-body">
+            <h4>Fondamentaux des Réseaux — CCNA 200-301</h4>
+            <span class="alph-by">Alphorme · 2024</span>
+          </div>
+          <div class="alph-actions">
+            <button class="cert-view" onclick="viewCert('docs/cisco-ccna-200-301---les-fondamentaux-des-reseaux.pdf','Fondamentaux des Réseaux CCNA 200-301 — Alphorme')" title="Visualiser"><i class="fas fa-eye"></i></button>
+            <a href="docs/cisco-ccna-200-301---les-fondamentaux-des-reseaux.pdf" target="_blank" class="cert-dl" title="Télécharger"><i class="fas fa-download"></i></a>
+          </div>
+        </div>
+
+        <div class="alph-card">
+          <div class="alph-icon-wrap"><i class="fas fa-shield-alt"></i></div>
+          <div class="alph-body">
+            <h4>Fondamentaux de la Sécurité Réseau — CCNA 200-301</h4>
+            <span class="alph-by">Alphorme · 2024</span>
+          </div>
+          <div class="alph-actions">
+            <button class="cert-view" onclick="viewCert('docs/ccna-200-301---fondamentaux-de-la-securite-reseau.pdf','Fondamentaux Sécurité Réseau CCNA 200-301 — Alphorme')" title="Visualiser"><i class="fas fa-eye"></i></button>
+            <a href="docs/ccna-200-301---fondamentaux-de-la-securite-reseau.pdf" target="_blank" class="cert-dl" title="Télécharger"><i class="fas fa-download"></i></a>
+          </div>
+        </div>
+
+        <div class="alph-card">
+          <div class="alph-icon-wrap"><i class="fas fa-chart-line"></i></div>
+          <div class="alph-body">
+            <h4>Gestion & Surveillance du Réseau Cisco — CCNA 200-301</h4>
+            <span class="alph-by">Alphorme · 2024</span>
+          </div>
+          <div class="alph-actions">
+            <button class="cert-view" onclick="viewCert('docs/ccna-200-301---gestion-et-surveillance-du-reseau-cisco.pdf','Gestion & Surveillance Réseau Cisco — Alphorme')" title="Visualiser"><i class="fas fa-eye"></i></button>
+            <a href="docs/ccna-200-301---gestion-et-surveillance-du-reseau-cisco.pdf" target="_blank" class="cert-dl" title="Télécharger"><i class="fas fa-download"></i></a>
+          </div>
+        </div>
+
+        <div class="alph-card">
+          <div class="alph-icon-wrap"><i class="fas fa-virus"></i></div>
+          <div class="alph-body">
+            <h4>Analyse de Malware 1&2 — Guide Complet</h4>
+            <span class="alph-by">Alphorme · 2024</span>
+          </div>
+          <div class="alph-actions">
+            <button class="cert-view" onclick="viewCert('docs/analyse-de-malware-1-2---guide-complet.pdf','Analyse de Malware 1&2 — Alphorme')" title="Visualiser"><i class="fas fa-eye"></i></button>
+            <a href="docs/analyse-de-malware-1-2---guide-complet.pdf" target="_blank" class="cert-dl" title="Télécharger"><i class="fas fa-download"></i></a>
+          </div>
+        </div>
+
+        <div class="alph-card">
+          <div class="alph-icon-wrap"><i class="fas fa-user-shield"></i></div>
+          <div class="alph-body">
+            <h4>Blue Team — L'Essentiel pour l'Analyste SOC</h4>
+            <span class="alph-by">Alphorme · 2024</span>
+          </div>
+          <div class="alph-actions">
+            <button class="cert-view" onclick="viewCert('docs/blue-team----lessentiel-pour-lanalyste-soc.pdf','Blue Team — Analyste SOC · Alphorme')" title="Visualiser"><i class="fas fa-eye"></i></button>
+            <a href="docs/blue-team----lessentiel-pour-lanalyste-soc.pdf" target="_blank" class="cert-dl" title="Télécharger"><i class="fas fa-download"></i></a>
           </div>
         </div>
 
@@ -634,6 +703,23 @@
 </footer>
 
 <button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-chevron-up"></i></button>
+
+<!-- ══════════════════════ CERT MODAL ══════════════════════ -->
+<div class="cert-modal-overlay" id="certModal" onclick="if(event.target===this)closeCertModal()">
+  <div class="cert-modal">
+    <div class="cert-modal-header">
+      <i class="fas fa-certificate cert-modal-icon"></i>
+      <span class="cert-modal-title" id="certModalTitle">Certificat</span>
+      <div class="cert-modal-actions">
+        <a class="cm-btn dl" id="certModalDl" href="#" download><i class="fas fa-download"></i><span> Télécharger</span></a>
+        <button class="cm-btn cl" onclick="closeCertModal()"><i class="fas fa-times"></i><span> Fermer</span></button>
+      </div>
+    </div>
+    <div class="cert-modal-body" id="certModalBody">
+      <iframe id="certModalFrame" src="" title="Certificat"></iframe>
+    </div>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
